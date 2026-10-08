@@ -1,0 +1,8 @@
+# countin 결과물(음원)은 저작권 때문에 올리지 않는다
+output/
+tools/countin/output/
+
+__pycache__/
+*.egg-info/
+.venv/
+.DS_Store

@@ -1,0 +1,5 @@
+# countin 자체는 표준 라이브러리만 사용합니다.
+# 아래는 스템 분리(demucs)를 실행할 파이썬 환경에 필요한 패키지입니다.
+# yt-dlp, ffmpeg, ffprobe는 pip가 아니라 공식/정적 바이너리로 설치하세요(README 참고).
+demucs==4.0.1
+soundfile        # --quality max의 FLAC 스템 저장용 (없으면 mp3 320으로 자동 폴백)

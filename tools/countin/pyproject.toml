@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countin"
+version = "0.1.0"
+description = "곡을 분해하고, 원하는 파트만 골라 카운트인을 붙여 연습용 트랙으로 만드는 도구"
+readme = "README.md"
+requires-python = ">=3.9"
+# countin 자체는 표준 라이브러리만 사용한다. demucs는 별도 설치(requirements.txt).
+dependencies = []
+
+[project.optional-dependencies]
+demucs = ["demucs==4.0.1", "soundfile"]
+
+[project.scripts]
+countin = "countin.__main__:main"
+
+[tool.setuptools]
+packages = ["countin"]
