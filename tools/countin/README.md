@@ -101,6 +101,7 @@ python -m countin "https://youtube.com/watch?v=XXXX" \
 | `--trim-start auto\|초` | 곡 앞 무음 자르기. `auto`는 첫 소리 시점을 자동 감지 |
 | `--trim-offset 초` | trim-start에 더할 미세 보정값 (음수 가능) |
 | `--noise-db -40` | 무음 판정 기준. 감지가 부정확하면 `-50` 등 |
+| `--gain PART=dB...` | 파트별 음량 보정. 예: `--gain drums=+3`(드럼 키우기), `--gain vocals=-3`(보컬 줄이기). 키운 뒤 소리가 깨지면 `--volume`을 낮추기 |
 | `--volume 0.8` | 믹스 볼륨. 소리가 깨지면(clipping) 낮추기. 클리핑 위험이 있으면 권장값을 로그로 알려 줌 |
 | `--tick-freq/--tick-dur/--tick-db` | 틱 소리 (기본 1500Hz, 0.05초, -6dBFS) |
 | `--name "아티스트-곡명"` | 결과물 이름. `output/<이름>/`에 `<이름>(countin+파트).mp3`와 파트별 스템 `<이름>(vocals).mp3` 등을 저장. 한 번 지정하면 작업 폴더에 기억되어 `--resume` 때 생략 가능 |

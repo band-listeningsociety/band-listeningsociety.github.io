@@ -38,6 +38,19 @@ def _trim_arg(v: str):
     return f
 
 
+def _gain_arg(v: str):
+    part, sep, db = v.partition("=")
+    if not sep or part not in PARTS:
+        raise argparse.ArgumentTypeError(f"--gain은 PART=dB 형식이어야 합니다 (예: drums=+3). PART: {' '.join(PARTS)}")
+    try:
+        f = float(db)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"--gain의 dB 값이 숫자가 아닙니다: {v}")
+    if not -40 <= f <= 20:
+        raise argparse.ArgumentTypeError("--gain의 dB 값은 -40~+20 범위여야 합니다.")
+    return part, f
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="countin",
@@ -66,6 +79,8 @@ def build_parser() -> argparse.ArgumentParser:
     sel.add_argument("--include", nargs="+", choices=PARTS, metavar="PART", help="남길 파트만 지정")
     g.add_argument("--volume", type=float, default=0.8,
                    help="믹스 볼륨 배율 (기본 0.8). 소리가 깨지면(clipping) 낮추세요")
+    g.add_argument("--gain", nargs="+", type=_gain_arg, default=[], metavar="PART=dB",
+                   help="파트별 음량 보정(dB). 예: --gain drums=+3 vocals=-2")
 
     g = p.add_argument_group("카운트인")
     g.add_argument("--bpm", type=_bpm_arg, default="auto", help="BPM 숫자 또는 auto (기본 auto)")
@@ -156,6 +171,11 @@ def _main(args) -> int:
         raise StepError("옵션 확인", f"입력 파일이 없습니다: {args.input_audio}", "경로를 따옴표로 감싸 다시 지정하세요.")
 
     parts = selected_parts(args)
+    gains = dict(args.gain)
+    for p in gains:
+        if p not in parts:
+            raise StepError("옵션 확인", f"--gain {p}: 믹스에 포함되지 않은 파트입니다.",
+                            f"믹스 파트: {', '.join(parts)}")
     ticks = count_in_ticks(args)
 
     # ---------- 1. 환경 점검 ----------
@@ -200,11 +220,13 @@ def _main(args) -> int:
     stage(5, TOTAL_STAGES, "파트 믹스 + 분석")
     sid = separate.stems_id(ws)
     mix_key = {"parts": parts, "volume": args.volume, "stems": sid}
+    if gains:
+        mix_key["gains"] = gains
     mix_meta = ws.root / "mix.json"
     if args.resume and ws.mix_wav.exists() and ws.read_json(mix_meta) == mix_key:
         info(f"--resume: 기존 mix.wav를 사용합니다 ({', '.join(parts)})")
     else:
-        mix.build_mix(stems, parts, args.volume, ws.mix_wav)
+        mix.build_mix(stems, parts, args.volume, ws.mix_wav, gains)
         ws.write_json(mix_meta, mix_key)
 
     peak = analysis.peak_db(ws.mix_wav)
@@ -215,7 +237,7 @@ def _main(args) -> int:
             warn(f"믹스가 0 dBFS를 넘어 최종 mp3에서 소리가 깨질(clipping) 수 있습니다. "
                  f"--volume {suggest:.2f} 이하로 다시 실행하세요.")
 
-    trim, bpm, analysis_data = _analyze(args, ws, stems, parts, sid, ticks)
+    trim, bpm, analysis_data = _analyze(args, ws, stems, parts, sid, ticks, gains)
 
     # ---------- 6. 카운트인 + 출력 ----------
     stage(6, TOTAL_STAGES, "카운트인 합성 + 출력")
@@ -262,12 +284,14 @@ def _main(args) -> int:
     return 0
 
 
-def _analyze(args, ws: Workspace, stems, parts, sid: str, ticks: int):
+def _analyze(args, ws: Workspace, stems, parts, sid: str, ticks: int, gains):
     """첫 소리 시점 S와 BPM을 정한다. silencedetect 결과는 analysis.json에 캐시."""
     need_bpm = ticks > 0 and args.bpm == "auto"
     need_s = args.trim_start == "auto"
 
     key = {"parts": parts, "volume": args.volume, "noise_db": args.noise_db, "stems": sid}
+    if gains:
+        key["gains"] = gains
     cached = ws.read_json(ws.analysis_json) or {}
     data = {"key": key}
     if cached.get("key") == key:

@@ -18,17 +18,22 @@ STEP_MIX = "파트 믹스(ffmpeg amix)"
 STEP_FINAL = "카운트인 합성/인코딩(ffmpeg)"
 
 
-def build_mix(stems: Dict[str, Path], parts: Sequence[str], volume: float, out_wav: Path) -> None:
+def build_mix(stems: Dict[str, Path], parts: Sequence[str], volume: float, out_wav: Path,
+              gains: Optional[Dict[str, float]] = None) -> None:
+    """gains: 파트별 음량 보정(dB). 예: {"drums": 3.0}"""
+    gains = gains or {}
     inputs: List[str] = []
     for p in parts:
         inputs += ["-i", str(stems[p])]
     n = len(parts)
     labels = "".join(f"[{i}:a]" for i in range(n))
+    weights = [10 ** (gains.get(p, 0.0) / 20.0) for p in parts]
     if n == 1:
-        graph = f"[0:a]volume={volume}[m]"
+        graph = f"[0:a]volume={volume * weights[0]:.4f}[m]"
     else:
-        # inputs=N은 선택된 파트 수와 반드시 일치해야 한다
-        graph = f"{labels}amix=inputs={n}:normalize=0,volume={volume}[m]"
+        # inputs=N은 선택된 파트 수와 반드시 일치해야 한다. normalize=0이라 weights가 그대로 배율이 된다
+        w = " ".join(f"{x:.4f}" for x in weights)
+        graph = f"{labels}amix=inputs={n}:normalize=0:weights={w},volume={volume}[m]"
     tmp = out_wav.with_name(out_wav.stem + ".tmp.wav")
     run(
         ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", *inputs,
@@ -39,6 +44,9 @@ def build_mix(stems: Dict[str, Path], parts: Sequence[str], volume: float, out_w
     )
     tmp.replace(out_wav)
     info(f"믹스 완료 ({n}개 파트: {', '.join(parts)}, volume={volume}) → {out_wav}")
+    for p in parts:
+        if gains.get(p):
+            info(f"  {p} 음량 {gains[p]:+g} dB")
 
 
 @dataclass
