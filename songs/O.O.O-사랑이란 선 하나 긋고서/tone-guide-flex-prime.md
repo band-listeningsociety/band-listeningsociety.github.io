@@ -46,7 +46,9 @@
 ### 앰프 노브 (화면 표시는 %, 모델마다 노브 구성이 조금 다름)
 
 - Volume/Drive 50~60%: 세게 치면 살짝 깨지고 약하게 치면 맑아지는 지점
-- Bass 50%, Mid 60%, Treble 50%, Master 70% 이상
+- Bass 50%, Treble 50%
+- 64 Black Lux Norm(Deluxe Reverb)은 원래 앰프처럼 **Mid 노브가 없음**. 합주에서 기타가 묻히면 앰프 블록 Advanced 페이지 EQ의 Low Mid(청록) 밴드를 800Hz 부근 +2dB
+- Master 노브가 없는 모델이면 무시하고, 전체 볼륨은 Advanced 페이지 Output Gain으로
 
 > 이펙트별 노브 이름과 범위는 매뉴얼에 나와 있지 않습니다. 화면에 다른 노브가 보이면 이름에 맞춰 조정하세요.
 
