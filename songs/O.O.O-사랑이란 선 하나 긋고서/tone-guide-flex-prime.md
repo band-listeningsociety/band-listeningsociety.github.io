@@ -82,7 +82,7 @@
 |---|---|---|---|---|---|
 | FS1 | **벌스** | Off | On | On | 기본 상태 |
 | FS2 | **솔로 (1:55~2:20)** | **On** | On | On | **Gate Off** (멜로디가 씹히지 않게). 밝고 큰 톤 |
-| FS3 | **브릿지 (몽환)** | Off | **On** (프리셋 `OOO Delay Bridge`) | On (프리셋 `OOO Reverb Bridge`) | Dim Chorus On. 기타는 넥 픽업 + 톤 노브 줄이기. 아래 "브릿지 몽환 세팅" 참고 |
+| FS3 | **브릿지 (몽환)** | Off | **On** (프리셋 `OOO Delay Bridge`) | On (프리셋 `OOO Reverb Bridge`) | **페이저 On**. 기타는 넥 픽업 + 톤 노브 줄이기. 아래 "브릿지 몽환 세팅" 참고 |
 
 - 같은 화면 위쪽 **Tempo** → **Fixed 190 BPM** (딜레이를 곡 템포에 맞춤)
 - FS3 길게 누르기(기본은 튜너)를 **Bank A/B**로 바꾸면 스위치를 6개까지 사용 가능 (매뉴얼 4.6.1)
@@ -95,7 +95,7 @@
 |---|---|
 | 리버브 (지금 블록 그대로. 공간이 부족하면 블록 자체를 **AIR Reverb**로 바꾸고 Hall/Plate 타입) | `OOO Reverb Bridge`: Mix 35~40%, Decay/Time 길게(3~4초) |
 | 딜레이 (BBD/Tape) | `OOO Delay Bridge`: **점8분 237ms** (190BPM), Mix 20~25%, Feedback 30~35% |
-| **Dim Chorus** 블록 추가 (앰프 앞, 평소엔 Off) | 약하게. 브릿지 씬에서만 On |
+| **페이저** 블록 추가 — 악보 지시 (Jimmy OD 뒤·앰프 앞, 평소엔 Off): **Orange Phaser** 또는 **Stone Phaser** | 느리게: Rate 0.4~0.8Hz (또는 Sync 1~2마디), Depth 중간, Feedback/Resonance 낮게, Mix 있으면 50%. 브릿지 씬에서만 On. 코러스와 같이 쓰면 탁해지므로 Dim Chorus는 빼기 |
 
 - 더 몽환적으로: 리버브를 **Shimmer**로 (옥타브 위 잔향이 생겨 원곡과는 멀어질 수 있음)
 - 브릿지에서 나올 때 잔향이 뚝 끊기면 딜레이/리버브의 **Tails**를 On (매뉴얼 4.1.3)
