@@ -49,6 +49,7 @@
 - Bass 50%, Treble 50%
 - 64 Black Lux Norm(Deluxe Reverb)은 원래 앰프처럼 **Mid 노브가 없음**. 합주에서 기타가 묻히면 앰프 블록 Advanced 페이지 EQ의 Low Mid(왼쪽 2번 점) 밴드를 800Hz 부근 +2dB
 - Master 노브가 없는 모델이면 무시하고, 전체 볼륨은 Advanced 페이지 Output Gain으로
+- **칠 때마다 지직거리면**: 앰프 블록 Advanced 페이지 **Input Gain −6dB**. 기타 입력이 세서 앰프가 저음 위주로 찌그러지는 것 (실측: 리그 출력의 찌그러짐 성분 약 −7dB, 대부분 500Hz 이하). 줄어든 볼륨은 Output Gain으로 보충
 
 > 이펙트별 노브 이름과 범위는 매뉴얼에 나와 있지 않습니다. 화면에 다른 노브가 보이면 이름에 맞춰 조정하세요.
 
