@@ -36,7 +36,7 @@
 |---|---|---|
 | Input | 리그 입력 설정 | Gate Thrsh 약 −60dB, Noise Filt 약 −90dB |
 | 1 | **Gray Comp** (Compressor) | Sustain 30~40%, Level은 켰다 껐다 할 때 볼륨이 같아지는 지점. Advanced 페이지(슬라이더 아이콘) Block Mix 50~70% |
-| 2 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%, Tone 50%. 앰프를 더 밀어주는 용도 |
+| 2 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%. Tone 노브가 없으므로 음색은 Advanced 페이지 EQ로(High Mid/High 밴드). 앰프를 더 밀어주는 용도 |
 | 3 | **64 Black Lux Norm** (Fender Deluxe Reverb), X2 Stereo-Doubling | 아래 "앰프 노브" 참고 |
 | 4 | **1X12 Black Panel Lux** cab | 다이내믹 마이크, On-Axis |
 | 5 | **Para EQ** (또는 블록 Advanced 페이지 EQ) | Low Cut 약 80Hz, High Cut 약 5.5kHz, 2.5~3kHz −2dB |
