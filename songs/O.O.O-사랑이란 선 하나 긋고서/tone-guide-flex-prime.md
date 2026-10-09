@@ -35,18 +35,20 @@
 | 슬롯 | 블록 | 설정 |
 |---|---|---|
 | Input | 리그 입력 설정 | Gate Thrsh 약 −60dB, Noise Filt 약 −90dB |
-| 1 | **Gray Comp** (Dynamics) | 약하게: 게인이 1~3dB 정도만 줄어들게. Mix 50~70% |
-| 2 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 2~3, Level 6~7, Tone 12시 근처. 앰프를 더 밀어주는 용도 |
+| 1 | **Gray Comp** (Compressor) | Sustain 30~40%, Level은 켰다 껐다 할 때 볼륨이 같아지는 지점. Advanced 페이지(슬라이더 아이콘) Block Mix 50~70% |
+| 2 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%, Tone 50%. 앰프를 더 밀어주는 용도 |
 | 3 | **64 Black Lux Norm** (Fender Deluxe Reverb), X2 Stereo-Doubling | 아래 "앰프 노브" 참고 |
 | 4 | **1X12 Black Panel Lux** cab | 다이내믹 마이크, On-Axis |
 | 5 | **Para EQ** (또는 블록 Advanced 페이지 EQ) | Low Cut 약 80Hz, High Cut 약 5.5kHz, 2.5~3kHz −2dB |
 | 6 | **Tape Echo** 또는 **BBD Delay** | 4분음표 = **316ms** (190BPM), Mix 10~12%, Feedback 15~20% |
 | 7 | **Spring Reverb** 또는 **AIR Reverb** (Room) | Mix 15~18% |
 
-### 앰프 노브 (0~10 기준, 모델마다 노브 구성이 조금 다름)
+### 앰프 노브 (화면 표시는 %, 모델마다 노브 구성이 조금 다름)
 
-- Volume/Drive 5~6: 세게 치면 살짝 깨지고 약하게 치면 맑아지는 지점
-- Bass 5, Mid 6, Treble 5, Master 7 이상
+- Volume/Drive 50~60%: 세게 치면 살짝 깨지고 약하게 치면 맑아지는 지점
+- Bass 50%, Mid 60%, Treble 50%, Master 70% 이상
+
+> 이펙트별 노브 이름과 범위는 매뉴얼에 나와 있지 않습니다. 화면에 다른 노브가 보이면 이름에 맞춰 조정하세요.
 
 ### 스테레오 더블링
 
