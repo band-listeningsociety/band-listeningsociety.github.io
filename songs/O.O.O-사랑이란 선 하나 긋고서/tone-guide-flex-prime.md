@@ -35,13 +35,14 @@
 | 슬롯 | 블록 | 설정 |
 |---|---|---|
 | Input | 리그 입력 설정 | Gate Thrsh 약 −60dB, Noise Filt 약 −90dB |
-| 1 | **Gray Comp** (Compressor) | Sustain 30~40%, Level은 켰다 껐다 할 때 볼륨이 같아지는 지점. Advanced 페이지(슬라이더 아이콘) Block Mix 50~70% |
-| 2 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%. Tone 노브가 없으므로 음색은 Advanced 페이지 EQ로(High Mid/High 밴드). 앰프를 더 밀어주는 용도 |
-| 3 | **64 Black Lux Norm** (Fender Deluxe Reverb), X2 Stereo-Doubling | 아래 "앰프 노브" 참고 |
-| 4 | **1X12 Black Panel Lux** cab | 다이내믹 마이크, On-Axis |
-| 5 | (블록 없이) **캡 블록 Advanced 페이지 EQ** | EQ On. Low(왼쪽 1번 점) Mode=Cut, 80Hz / High(4번 점) Mode=Cut, 5,500Hz / High Mid(3번 점) 2,500Hz(이 밴드 최댓값) −2dB (매뉴얼 p26~27) |
-| 6 | **Tape Echo** 또는 **BBD Delay** | 4분음표 = **316ms** (190BPM), Mix 10~12%, Feedback 15~20% |
-| 7 | **Spring Reverb** 또는 **AIR Reverb** (Room) | Mix 15~18% |
+| 1 | **Gate** (Dynamics/Utility) — **반드시 Gray Comp보다 앞** | Threshold −44dB, Release 34ms (기본값). 끝에 노이즈가 남으면 Noise Filter −80→−70dB, Threshold −40dB 쪽으로 |
+| 2 | **Gray Comp** (Compressor) | Sustain 30~40%, Level은 켰다 껐다 할 때 볼륨이 같아지는 지점. Advanced 페이지(슬라이더 아이콘) Block Mix 50~70% |
+| 3 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%. Tone 노브가 없으므로 음색은 Advanced 페이지 EQ로(High Mid/High 밴드). 앰프를 더 밀어주는 용도 |
+| 4 | **64 Black Lux Norm** (Fender Deluxe Reverb), X2 Stereo-Doubling | 아래 "앰프 노브" 참고 |
+| 5 | **1X12 Black Panel Lux** cab | 다이내믹 마이크, On-Axis |
+| 6 | (블록 없이) **캡 블록 Advanced 페이지 EQ** | EQ On. Low(왼쪽 1번 점) Mode=Cut, 80Hz / High(4번 점) Mode=Cut, 5,500Hz / High Mid(3번 점) 2,500Hz(이 밴드 최댓값) −2dB (매뉴얼 p26~27) |
+| 7 | **Tape Echo** 또는 **BBD Delay** | 4분음표 = **316ms** (190BPM), Mix 10~12%, Feedback 15~20% |
+| 8 | **Spring Reverb** 또는 **AIR Reverb** (Room) | Mix 15~18% |
 
 ### 기타 (텔레캐스터 기준)
 
