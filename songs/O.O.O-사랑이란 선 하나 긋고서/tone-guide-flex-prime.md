@@ -80,8 +80,8 @@
 
 | 풋스위치 | 씬 | Jimmy OD | Delay | Reverb | 그 밖의 설정 |
 |---|---|---|---|---|---|
-| FS1 | **벌스** | Off | On | On | 기본 상태 |
-| FS2 | **솔로 (1:55~2:20)** | **On** | On | On | **Gate Off** (멜로디가 씹히지 않게). 밝고 큰 톤 |
+| FS1 | **리듬 (백킹)** | **On** (프리셋 `OOO Jimmy Rhythm`: Gain 10~20%, Level 50%) | Off 또는 Mix 5% 이하 | On (Mix 10% 정도) | Gate On. 다른 기타와 같이 칠 때 → 앰프 X2 Off(모노), Low Cut 100~120Hz |
+| FS2 | **솔로 (1:55~2:20)** | **On** (프리셋 `OOO Jimmy Solo`: Gain 20~30%, Level 70~75%) | On | On | **Gate Off** (멜로디가 씹히지 않게). 밝고 큰 톤 |
 | FS3 | **브릿지 (몽환)** | Off | **On** (프리셋 `OOO Delay Bridge`) | On (프리셋 `OOO Reverb Bridge`) | **페이저 On**. 기타는 넥 픽업 + 톤 노브 줄이기. 아래 "브릿지 몽환 세팅" 참고 |
 
 - 같은 화면 위쪽 **Tempo** → **Fixed 190 BPM** (딜레이를 곡 템포에 맞춤)
