@@ -34,8 +34,8 @@
 
 | 슬롯 | 블록 | 설정 |
 |---|---|---|
-| Input | 리그 입력 설정 | Gate Thrsh 약 −60dB, Noise Filt 약 −90dB |
-| 1 | **Gate** (Dynamics/Utility) — **반드시 Gray Comp보다 앞** | Threshold −44dB, Release 34ms (기본값). 끝에 노이즈가 남으면 Noise Filter −80→−70dB, Threshold −40dB 쪽으로 |
+| Input | 리그 입력 설정 | Gate Thrsh −120dB(사실상 끔, 게이트는 1번 블록으로), Noise Filt 약 −90dB |
+| 1 | **Gate** (Dynamics/Utility) — **반드시 Gray Comp보다 앞** | Threshold −50~−55dB, Release 100~200ms, Noise Filter −85dB 근처. 세게 걸면 멜로디 단음이 씹힘(실제 겪음) → **솔로 씬(FS2)에서는 Gate Off**. 입력(In) 게이트는 −120dB로 사실상 끄고 게이트는 이 블록 하나로 |
 | 2 | **Gray Comp** (Compressor) | Sustain 30~40%, Level은 켰다 껐다 할 때 볼륨이 같아지는 지점. Advanced 페이지(슬라이더 아이콘) Block Mix 50~70% |
 | 3 | **Jimmy OD** (Drive) — 후렴에서만 켬 | Gain 20~30%, Level 60~70%. Tone 노브가 없으므로 음색은 Advanced 페이지 EQ로(High Mid/High 밴드). 앰프를 더 밀어주는 용도 |
 | 4 | **64 Black Lux Norm** (Fender Deluxe Reverb), X2 Stereo-Doubling | 아래 "앰프 노브" 참고 |
@@ -81,7 +81,7 @@
 | 풋스위치 | 씬 | Jimmy OD | Delay | Reverb | 그 밖의 설정 |
 |---|---|---|---|---|---|
 | FS1 | **벌스** | Off | On | On | 기본 상태 |
-| FS2 | **후렴/클라이맥스** | **On** | On | On | 115~140초 구간의 밝고 큰 톤 |
+| FS2 | **솔로 (1:55~2:20)** | **On** | On | On | **Gate Off** (멜로디가 씹히지 않게). 밝고 큰 톤 |
 | FS3 | **브릿지 (몽환)** | Off | **On** (프리셋 `OOO Delay Bridge`) | On (프리셋 `OOO Reverb Bridge`) | Dim Chorus On. 기타는 넥 픽업 + 톤 노브 줄이기. 아래 "브릿지 몽환 세팅" 참고 |
 
 - 같은 화면 위쪽 **Tempo** → **Fixed 190 BPM** (딜레이를 곡 템포에 맞춤)
